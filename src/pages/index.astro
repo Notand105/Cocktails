@@ -1,15 +1,27 @@
 ---
-import TimeInput from '../components/timeInput.svelte'
+import RandomDrink from "../components/RandomDrink.svelte";
 ---
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Reunion manager</title>
+	<title>Cocktails</title>
 </head>
 <body>
-	<TimeInput client:visible/>	
+	<nav class="sticky top-0 w-full h-16 bg-orange-800 text-white flex items-center px-8">
+		<span class="font-extrabold text-2xl cursor-pointer">COCKTAILS</span>
+		<ul>
+
+		</ul>
+	</nav>
+	<header class="min-h-screen bg-slate-100">
+		<div class=" px-8 h-full border w-1/2 flex flex-col gap-4 py-8">
+			<h1 class="text-5xl">¿Que te gustaría beber hoy?</h1>
+			<h2 class="text-2xl">En cocktails tienes acceso a cientos de preparaciones para que combatas la sed como más te guste</h2>
+		</div>
+		<RandomDrink client:load />
+	</header>
 </body>
 </html>
 <style>
@@ -17,5 +29,10 @@ import TimeInput from '../components/timeInput.svelte'
 		padding: .5rem;
 		background-color: blue;
 		color: white;
+	}
+	*{
+		padding: 0;
+		margin: 0;
+		font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 	}
 </style>
