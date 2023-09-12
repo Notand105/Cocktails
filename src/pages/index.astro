@@ -1,5 +1,6 @@
 ---
 import RandomDrink from "../components/RandomDrink.svelte";
+import SearchByIngredient from "../components/SearchByIngredient.svelte";
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -21,6 +22,7 @@ import RandomDrink from "../components/RandomDrink.svelte";
 			<h2 class="text-2xl">In cocktails you have access to hundrends of drinks so you can find the right one for you</h2>
 		</div>
 		<RandomDrink client:load />
+		<SearchByIngredient client:load/>
 	</header>
 </body>
 </html>

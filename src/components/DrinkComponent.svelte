@@ -21,7 +21,10 @@
         {#if openIngredients}
             <div>
                 <Ingredients Drink={Drink} /> 
+                {#if Drink.strInstructions}
+                
                 <p>{Drink.strInstructions}</p>
+                {/if}
             </div>
         {/if}
     </div>
