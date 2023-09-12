@@ -43,8 +43,8 @@
 <div>
     {#if loaded }
     {#each ing as ingredient, i}
-        <p>{ingredient}</p>
-        <p>{measures[i]}</p>
+        <p class="text-orange-600 font-semibold text-lg px-2">{ingredient}</p>
+        <p class="text-slate-200 font-medium px-4">{measures[i]}</p>
     {/each}
     {/if}
 </div>

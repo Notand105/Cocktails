@@ -17,7 +17,7 @@ import SearchByIngredient from "../components/SearchByIngredient.svelte";
 		</ul>
 	</nav>
 	<header class="flex md:flex-row flex-col justify-between bg-black text-white atf">
-		<div class=" md:px-12 px-8 h-full md:w-1/2 flex flex-col gap-12 pt-8 justify-center ">
+		<div class=" md:px-12 px-8 h-full md:w-4/5 flex flex-col gap-12 pt-8 justify-center ">
 			<h1 class="md:text-6xl text-5xl font-bold ">Thirsty?</h1>
 			<h2 class="md:text-3xl text-lg font-medium w-full ">In cocktails you have access to hundrends of drinks so you can find the right one for you</h2>
 			<a href="#random" class="text-xl text-center p-2 bg-orange-600 hover:bg-orange-500 cursor-pointer transition-all">Give me a drink!</a>
@@ -33,6 +33,7 @@ import SearchByIngredient from "../components/SearchByIngredient.svelte";
 <style>
 	html{
 		scroll-behavior: smooth;
+		overflow-x: hidden;
 	}
 	.p_btn{
 		padding: .5rem;
