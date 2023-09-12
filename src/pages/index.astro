@@ -10,23 +10,30 @@ import SearchByIngredient from "../components/SearchByIngredient.svelte";
 	<title>Cocktails</title>
 </head>
 <body>
-	<nav class="sticky top-0 w-full h-16 bg-orange-800 text-white flex items-center px-8">
-		<span class="font-extrabold text-2xl cursor-pointer">COCKTAILS</span>
+	<nav class="sticky top-0 w-full h-16 bg-black text-white flex items-center px-8 z-20">
+		<span class="font-extrabold text-2xl cursor-pointer font-sans text-orange-600">COCKTAILS</span>
 		<ul>
 
 		</ul>
 	</nav>
-	<header class="min-h-screen bg-slate-100">
-		<div class=" px-8 h-full border w-1/2 flex flex-col gap-4 pt-8">
-			<h1 class="text-5xl">Thirsty?</h1>
-			<h2 class="text-2xl">In cocktails you have access to hundrends of drinks so you can find the right one for you</h2>
+	<header class="flex md:flex-row flex-col justify-between bg-black text-white atf">
+		<div class=" md:px-12 px-8 h-full md:w-1/2 flex flex-col gap-12 pt-8 justify-center ">
+			<h1 class="md:text-6xl text-5xl font-bold ">Thirsty?</h1>
+			<h2 class="md:text-3xl text-lg font-medium w-full ">In cocktails you have access to hundrends of drinks so you can find the right one for you</h2>
+			<a href="#random" class="text-xl text-center p-2 bg-orange-600 hover:bg-orange-500 cursor-pointer transition-all">Give me a drink!</a>
 		</div>
-		<RandomDrink client:load />
-		<SearchByIngredient client:load/>
+		<div class="w-full flex md:justify-end justify-center">
+			<img class="w-full xl:-translate-x-16 shadow-lg shadow-slate-700 translate-y-10 aspect-auto max-w-sm md:max-w-md" src="https://www.liquor.com/thmb/WjUD7EuXuhZ98tfYtOjdfmuA-y4=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Strawberry_Daquiri_1800x1800_primary-63c25c677616479da2d08767b3b4ee8a.jpg" alt="Daiquiri image" width="500px" height="500px">
+		</div>
 	</header>
+	<RandomDrink client:load />
+	<SearchByIngredient client:load/>
 </body>
 </html>
 <style>
+	html{
+		scroll-behavior: smooth;
+	}
 	.p_btn{
 		padding: .5rem;
 		background-color: blue;
@@ -35,6 +42,13 @@ import SearchByIngredient from "../components/SearchByIngredient.svelte";
 	*{
 		padding: 0;
 		margin: 0;
-		font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+		font-family: 'Times New Roman', Times, serif;
+	}
+	.bg-blue{
+		/* background-color: #034f80; */
+		background-color: #121212;
+	}
+	.atf{
+		height: 75vh;
 	}
 </style>
