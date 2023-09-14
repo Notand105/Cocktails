@@ -1,6 +1,7 @@
 ---
 import RandomDrink from "../components/RandomDrink.svelte";
 import SearchByIngredient from "../components/SearchByIngredient.svelte";
+import Footer from '../components/Footer.astro'
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -28,6 +29,7 @@ import SearchByIngredient from "../components/SearchByIngredient.svelte";
 	</header>
 	<RandomDrink client:load />
 	<SearchByIngredient client:load/>
+	<Footer />
 </body>
 </html>
 <style>
