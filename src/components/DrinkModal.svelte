@@ -4,14 +4,12 @@
     export let Drink
 
 </script>
-<div class="max-w-full w-fit m-auto bg-black text-white  flex flex-col md:flex-row">
+{#if Drink}
     
-        <div class="flex justify-center ">
-            <img class="w-full max-w-md" src={Drink.strDrinkThumb} alt={Drink.strDrink} width="400px" height="400px" />
-        </div>
+<div class="max-w-full w-fit m-auto bg-black flex flex-col md:flex-row">
     <div class="p-8 flex flex-col gap-4">
         <div class="px-4 flex justify-center flex-col items-center gap-2">
-            <h3 class="font-bold text-xl">{Drink.strDrink}</h3>
+            <h3 class="font-bold text-xl text-white">{Drink.strDrink}</h3>
             {#if Drink.strAlcoholic}
             <AlcoholicFlag alcoholic={Drink.strAlcoholic == 'Alcoholic'} />
             {/if}
@@ -26,8 +24,4 @@
             {/if}
     </div>
 </div>
-<style>
-    .para{
-        max-width: 50ch;
-    }
-</style>
+{/if}

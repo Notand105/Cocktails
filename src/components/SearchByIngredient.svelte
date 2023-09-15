@@ -1,11 +1,14 @@
 <script lang="ts">
   import { paginate, LightPaginationNav } from "svelte-paginate";
   import DrinkPreview from "./DrinkPreview.svelte";
+  import DrinkModal from "./DrinkModal.svelte";
+  import Modal from "./Modal.svelte";
   let items: any[] = [];
   let currentPage: number = 1;
   let pageSize: number = 9;
   let ingredients: string[] = ['Vodka', 'Gin', 'Rum', 'Tequila','Brandy','Coffee', 'Beer','Cognac', 'Pisco']
-
+  let showModal:boolean = false
+  let modalIngredient:any
   $: paginatedItems = paginate({ items, pageSize, currentPage });
 
   setIngredient("Vodka");
@@ -16,6 +19,14 @@
     );
     const response = await res.json();
     items = response.drinks;
+  }
+  const openModal=async(ingredientID:string)=>{
+    modalIngredient = {}
+    const res = await fetch('https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i='+ingredientID)
+    const response = await res.json()
+    modalIngredient = response.drinks[0]
+
+    showModal = true
   }
 </script>
 
@@ -28,14 +39,24 @@
         {/each}
     </div>
   </aside>
-  
+  <Modal bind:showModal >
+    {#await modalIngredient}
+      <p>Loading...</p>
+    {:then ingredient} 
+    <DrinkModal Drink={ingredient} />
+      
+    {/await}
+  </Modal> 
   {#await items}
   <p>loading...</p>
   {:then Drink}
   <div>
       <div class="flex flex-wrap gap-4 mx-auto justify-center items-center pb-10">
         {#each paginatedItems as drink}
-          <DrinkPreview Drink={drink} />
+          <!-- svelte-ignore a11y-no-static-element-interactions -->
+          <div on:click={()=>openModal(drink.idDrink)} on:keydown={()=>{}} class='cursor-pointer'>
+            <DrinkPreview  Drink={drink} />
+          </div>
         {/each}
       </div>
       <div class="pt-10 w-fit mx-auto">
