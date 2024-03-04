@@ -16,7 +16,7 @@
   </div>
   <div class="">
     <div class="">
-      <h3 class="font-bold text-xl text-white text-center ">{Drink.strDrink}</h3>
+      <h3 class="font-normal  text-white text-center ">{Drink.strDrink}</h3>
     </div>
   </div>
 </div>

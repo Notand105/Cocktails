@@ -1,57 +1,91 @@
 ---
 import RandomDrink from "../components/RandomDrink.svelte";
 import SearchByIngredient from "../components/SearchByIngredient.svelte";
-import Footer from '../components/Footer.astro'
+import Footer from "../components/Footer.astro";
 ---
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Cocktails</title>
-</head>
-<body>
-	<nav class="sticky top-0 w-full h-16 bg-black text-white flex items-center px-8 z-20">
-		<span class="font-extrabold text-2xl cursor-pointer font-sans text-orange-600">COCKTAILS</span>
-		<ul>
 
-		</ul>
-	</nav>
-	<header class="flex md:flex-row flex-col justify-between bg-black text-white atf">
-		<div class=" md:px-12 px-8 h-full md:w-4/5 flex flex-col gap-12 pt-8 justify-center ">
-			<h1 class="md:text-6xl text-5xl font-bold ">Thirsty?</h1>
-			<h2 class="md:text-3xl text-lg font-medium w-full ">In cocktails you have access to hundrends of drinks so you can find the right one for you</h2>
-			<a href="#random" class="text-xl text-center p-2 bg-orange-600 hover:bg-orange-500 cursor-pointer transition-all">Give me a drink!</a>
-		</div>
-		<div class="w-full flex md:justify-end justify-center">
-			<img class="w-full xl:-translate-x-16 shadow-lg shadow-slate-700 translate-y-10 aspect-auto max-w-sm md:max-w-md" src="https://www.liquor.com/thmb/WjUD7EuXuhZ98tfYtOjdfmuA-y4=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Strawberry_Daquiri_1800x1800_primary-63c25c677616479da2d08767b3b4ee8a.jpg" alt="Daiquiri image" width="500px" height="500px">
-		</div>
-	</header>
-	<RandomDrink client:load />
-	<SearchByIngredient client:load/>
-	<Footer />
-</body>
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Cocktails</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+	<body>
+		<nav
+			class="sticky top-0 h-16 bg-blue text-white flex items-center px-8 z-20 pad bgpattern"
+		>
+			<span
+				class="pl-4 w-full font-semibold text-2xl cursor-pointer font-sans text-orange-600"
+				>COCKTAILS</span
+			>
+		</nav>
+		<header
+			class="flex md:flex-row flex-col justify-center bg-blue text-white atf p-6 pad bgpattern"
+		>
+			<div
+				class="md:px-12 px-8 h-full p-4 md:w-4/5 flex flex-col gap-12 pt-8 justify-center"
+			>
+				<h1 class="md:text-6xl text-5xl font-bold">Thirsty?</h1>
+				<h2 class="md:text-xl text-lg font-thin w-full">
+					In cocktails you have access to hundrends of drinks so you
+					can find the right one for you
+				</h2>
+				<a
+					href="#random"
+					class="w-fit text-xl text-center py-4 bg-orange-600 hover:bg-orange-500 cursor-pointer transition-all padbtn rounded"
+					>Give me a drink!</a
+				>
+			</div>
+			<div class="lg:w-full flex md:justify-end justify-center">
+				<img
+					class="lg:w-full xl:-translate-x-16 shadow-lg shadow-slate-700 translate-y-10 aspect-auto max-w-sm md:max-w-80 lg:visible invisible w-1"
+					src="https://www.liquor.com/thmb/WjUD7EuXuhZ98tfYtOjdfmuA-y4=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Strawberry_Daquiri_1800x1800_primary-63c25c677616479da2d08767b3b4ee8a.jpg"
+					alt="Daiquiri image"
+				/>
+			</div>
+		</header>
+		<RandomDrink client:load />
+		<SearchByIngredient client:load />
+		<Footer />
+	</body>
 </html>
 <style>
-	html{
+	html {
 		scroll-behavior: smooth;
 		overflow-x: hidden;
 	}
-	.p_btn{
-		padding: .5rem;
+	.p_btn {
+		padding: 0.5rem;
 		background-color: blue;
 		color: white;
 	}
-	*{
+	* {
 		padding: 0;
 		margin: 0;
-		font-family: 'Times New Roman', Times, serif;
+		font-family: "Playfair Display", serif;
 	}
-	.bg-blue{
+	.bg-blue {
 		/* background-color: #034f80; */
 		background-color: #121212;
 	}
-	.atf{
+	.atf {
 		height: 75vh;
+	}
+	.pad {
+		padding: 1.5rem;
+	}
+	.padbtn {
+		padding: 1rem 1.5rem;
+	}
+	.bgpattern {
+		background-color: #121212;
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='77' height='107' viewBox='0 0 77 107'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='stamp-collection' fill='%23f3fc98' fill-opacity='0.03'%3E%3Cpath d='M46 101a5 5 0 0 1 5 5h5a5 5 0 0 1 10 0h5a5 5 0 0 1 5-5v-5a5 5 0 0 1 0-10v-5a5 5 0 0 1 0-10v-5a5 5 0 0 1 0-10v-5a5 5 0 0 1 0-10v-5a5 5 0 0 1 0-10v-5a5 5 0 0 1 0-10V6a5 5 0 0 1-5-5h-5a5 5 0 0 1-10 0h-5a5 5 0 0 1-10 0h-5a5 5 0 0 1-10 0h-5a5 5 0 0 1-10 0H6a5 5 0 0 1-5 5v5a5 5 0 0 1 0 10v5a5 5 0 0 1 0 10v5a5 5 0 0 1 0 10v5a5 5 0 0 1 0 10v5a5 5 0 0 1 0 10v5a5 5 0 0 1 0 10v5a5 5 0 0 1 5 5h5a5 5 0 0 1 10 0h5a5 5 0 0 1 10 0h5a5 5 0 0 1 5-5zm15-2a7 7 0 0 0-6.71 5h-1.58a7 7 0 0 0-13.42 0h-1.58a7 7 0 0 0-13.42 0h-1.58a7 7 0 0 0-13.42 0H7.71A7.01 7.01 0 0 0 3 99.29v-1.58a7 7 0 0 0 0-13.42v-1.58a7 7 0 0 0 0-13.42v-1.58a7 7 0 0 0 0-13.42v-1.58a7 7 0 0 0 0-13.42v-1.58a7 7 0 0 0 0-13.42v-1.58A7 7 0 0 0 3 9.29V7.71A7.02 7.02 0 0 0 7.71 3h1.58a7 7 0 0 0 13.42 0h1.58a7 7 0 0 0 13.42 0h1.58a7 7 0 0 0 13.42 0h1.58a7 7 0 0 0 13.42 0h1.58A7.02 7.02 0 0 0 74 7.71v1.58a7 7 0 0 0 0 13.42v1.58a7 7 0 0 0 0 13.42v1.58a7 7 0 0 0 0 13.42v1.58a7 7 0 0 0 0 13.42v1.58a7 7 0 0 0 0 13.42v1.58a7 7 0 0 0 0 13.42v1.58a7.01 7.01 0 0 0-4.71 4.71h-1.58A7 7 0 0 0 61 99zM12 12h53v83H12V12zm51 81H14V14h49v79z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 	}
 </style>

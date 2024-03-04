@@ -26,11 +26,11 @@
 <style>
 	dialog {
 		max-width: 32em;
-		border-radius: 0.2em;
+		border-radius: 0.5em;
 		border: none;
 		padding: 0;
 		/* under this line its custom to this project*/
-		background-color: black;
+		background-color: #121212;
 	}
 	dialog::backdrop {
 		background: rgba(0, 0, 0, 0.3);

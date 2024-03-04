@@ -4,7 +4,7 @@
     export let Drink
 
 </script>
-<div class="max-w-full w-fit m-auto bg-black text-white  flex flex-col md:flex-row">
+<div class="max-w-full w-fit m-auto bg text-white  flex flex-col md:flex-row">
     
         <div class="flex justify-center ">
             <img class="w-full max-w-md" src={Drink.strDrinkThumb} alt={Drink.strDrink} width="400px" height="400px" />
@@ -20,7 +20,7 @@
             <div class="flex flex-col gap-4 justify-center ">
                 <Ingredients Drink={Drink} /> 
                 {#if Drink.strInstructions}
-                    <p class="para pl-2 text-lg font-medium text-slate-200">{Drink.strInstructions}</p>
+                    <p class="para pl-2 text-lg font-normal text-slate-200">{Drink.strInstructions}</p>
                     {/if}
                 </div>
             {/if}
@@ -29,5 +29,8 @@
 <style>
     .para{
         max-width: 50ch;
+    }
+    .bg{
+        background-color: #121212;
     }
 </style>
